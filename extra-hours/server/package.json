@@ -1,0 +1,15 @@
+{
+	"name": "horas-extra-server",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"serve": "node --watch index"
+	},
+	"author": "ZeroBugZone",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"dotenv": "^16.4.5",
+		"express": "^4.19.2"
+	}
+}

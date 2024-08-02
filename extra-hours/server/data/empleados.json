@@ -1,0 +1,82 @@
+[
+	{
+		"id": 1,
+		"nombre": "Juan",
+		"apellido": "Pérez",
+		"cargo": "Desarrollador",
+		"supervisor": "Carlos García",
+		"salario": 5500000
+	},
+    {
+        "id": 2,
+        "nombre": "María",
+        "apellido": "Gómez",
+        "cargo": "Diseñadora",
+        "supervisor": "Carlos García",
+        "salario": 4500000
+    },
+    {
+        "id": 3,
+        "nombre": "Carlos",
+        "apellido": "García",
+        "cargo": "Gerente",
+        "supervisor": "Carlos García",
+        "salario": 7500000
+    },
+    {
+        "id": 4,
+        "nombre": "Luis",
+        "apellido": "Martínez",
+        "cargo": "Desarrollador",
+        "supervisor": "Carlos García",
+        "salario": 6000000
+    },
+    {
+        "id": 5,
+        "nombre": "Ana",
+        "apellido": "Rodríguez",
+        "cargo": "Diseñadora",
+        "supervisor": "Carlos García",
+        "salario": 5000000
+    },
+    {
+        "id": 6,
+        "nombre": "Pedro",
+        "apellido": "Hernández",
+        "cargo": "Desarrollador",
+        "supervisor": "Carlos García",
+        "salario": 6500000
+    },
+    {
+        "id": 7,
+        "nombre": "Sofía",
+        "apellido": "López",
+        "cargo": "Diseñadora",
+        "supervisor": "Carlos García",
+        "salario": 5500000
+    },
+    {
+        "id": 8,
+        "nombre": "Jorge",
+        "apellido": "Gutiérrez",
+        "cargo": "Desarrollador",
+        "supervisor": "Carlos García",
+        "salario": 7000000
+    },
+    {
+        "id": 9,
+        "nombre": "Laura",
+        "apellido": "Pérez",
+        "cargo": "Diseñadora",
+        "supervisor": "Carlos García",
+        "salario": 6000000
+    },
+    {
+        "id": 10,
+        "nombre": "Miguel",
+        "apellido": "Gómez",
+        "cargo": "Desarrollador",
+        "supervisor": "Carlos García",
+        "salario": 7500000
+    }
+] 
