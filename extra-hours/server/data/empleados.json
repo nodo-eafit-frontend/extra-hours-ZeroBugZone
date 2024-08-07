@@ -1,82 +1,83 @@
 [
 	{
 		"id": 1,
-		"nombre": "Juan",
-		"apellido": "Pérez",
+		"nombre": "Juan Pérez",
 		"cargo": "Desarrollador",
 		"supervisor": "Carlos García",
-		"salario": 5500000
+		"salario": 5500000,
+        "id_supervisor": 1
 	},
     {
         "id": 2,
-        "nombre": "María",
-        "apellido": "Gómez",
+        "nombre": "María Gómez",
         "cargo": "Diseñadora",
         "supervisor": "Carlos García",
-        "salario": 4500000
+        "salario": 4500000,
+        "id_supervisor": 1
+
     },
     {
         "id": 3,
-        "nombre": "Carlos",
-        "apellido": "García",
+        "nombre": "Carlos García",
         "cargo": "Gerente",
         "supervisor": "Carlos García",
-        "salario": 7500000
+        "salario": 7500000,
+        "id_supervisor": 1
     },
     {
         "id": 4,
-        "nombre": "Luis",
-        "apellido": "Martínez",
+        "nombre": "Luis Martínez",
         "cargo": "Desarrollador",
         "supervisor": "Carlos García",
-        "salario": 6000000
+        "salario": 6000000,
+        "id_supervisor": 1
     },
     {
         "id": 5,
-        "nombre": "Ana",
-        "apellido": "Rodríguez",
+        "nombre": "Ana Rodríguez",
         "cargo": "Diseñadora",
-        "supervisor": "Carlos García",
-        "salario": 5000000
+        "supervisor": "Veronica López",
+        "salario": 5000000,
+        "id_supervisor": 2
     },
     {
         "id": 6,
-        "nombre": "Pedro",
-        "apellido": "Hernández",
+        "nombre": "Pedro Hernández",
         "cargo": "Desarrollador",
-        "supervisor": "Carlos García",
-        "salario": 6500000
+        "supervisor": "Veronica López",
+        "salario": 6500000,
+        "id_supervisor": 2
     },
     {
         "id": 7,
-        "nombre": "Sofía",
-        "apellido": "López",
+        "nombre": "Sofía López",
         "cargo": "Diseñadora",
-        "supervisor": "Carlos García",
-        "salario": 5500000
+        "supervisor": "Vanesa Gómez",
+        "salario": 5500000,
+        "id_supervisor": 3
     },
     {
         "id": 8,
-        "nombre": "Jorge",
-        "apellido": "Gutiérrez",
+        "nombre": "Jorge Gutiérrez",
         "cargo": "Desarrollador",
-        "supervisor": "Carlos García",
-        "salario": 7000000
+        "supervisor": "Vanesa Gómez",
+        "salario": 7000000,
+        "id_supervisor": 3
     },
     {
         "id": 9,
-        "nombre": "Laura",
-        "apellido": "Pérez",
+        "nombre": "Laura Pérez",
         "cargo": "Diseñadora",
-        "supervisor": "Carlos García",
-        "salario": 6000000
+        "supervisor": "Andres Martínez",
+        "salario": 6000000,
+        "id_supervisor": 4
     },
     {
         "id": 10,
-        "nombre": "Miguel",
-        "apellido": "Gómez",
+        "nombre": "Miguel Gómez",
         "cargo": "Desarrollador",
-        "supervisor": "Carlos García",
-        "salario": 7500000
-    }
+        "supervisor": "Andres Martínez",
+        "salario": 7500000,
+        "id_supervisor": 4
+    }   
 ] 

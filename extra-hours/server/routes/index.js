@@ -1,11 +1,20 @@
 const express = require('express');
 const { getStats, postStats } = require('../apis/stats');
-const { getGameInfo } = require('../apis/gameInfo');
+const { getEmpleadoInfo } = require('../apis/get_empleados');
 // const { getTipsInfo } = require('') // TODO: completar
+const { getTest} = require('../apis/export');
+
+
+
+
 
 const router = express.Router();
 
-router.get('/game-info', getGameInfo);
+router.get('/test', getTest);
+
+
+
+router.get('/getEmpleadoInfo', getEmpleadoInfo);
 
 router.get('/stats', getStats);
 router.post('/stats', postStats);
@@ -13,3 +22,4 @@ router.post('/stats', postStats);
 // router.get(); // TODO: Agregar API con su respectivo método
 
 module.exports = router;
+ 
