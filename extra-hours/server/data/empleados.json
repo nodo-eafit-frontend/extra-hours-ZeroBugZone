@@ -6,7 +6,7 @@
 		"supervisor": "Carlos García",
 		"salario": 5500000,
         "id_supervisor": 1
-	},
+        },
     {
         "id": 2,
         "nombre": "María Gómez",
@@ -14,7 +14,6 @@
         "supervisor": "Carlos García",
         "salario": 4500000,
         "id_supervisor": 1
-
     },
     {
         "id": 3,
