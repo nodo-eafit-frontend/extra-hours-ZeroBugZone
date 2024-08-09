@@ -1,45 +1,13 @@
-<<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de Horas Extras</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
-</head>
-<body>
-    <h1>Generar Reporte de Horas Extras</h1>
-    <button onclick="generarReporte()">Generar Reporte</button>
-
-    <script>
-        function generarReporte() {
-            const empleados = [
-                { nombre: "Juan Pérez", salario: 3000, horasExtras: 10 },
-                { nombre: "María Gómez", salario: 3200, horasExtras: 8 },
-                { nombre: "Carlos Sánchez", salario: 2800, horasExtras: 12 },
-                { nombre: "Ana Martínez", salario: 3500, horasExtras: 5 },
-                { nombre: "Luis Rodríguez", salario: 3100, horasExtras: 7 },
-                { nombre: "Laura Fernández", salario: 3300, horasExtras: 9 },
-                { nombre: "Pedro López", salario: 2900, horasExtras: 11 },
-                { nombre: "Sofía Ramírez", salario: 3400, horasExtras: 6 },
-                { nombre: "Miguel Torres", salario: 3000, horasExtras: 10 },
-                { nombre: "Lucía Morales", salario: 3200, horasExtras: 8 }
-            ];
-
-            const ws_data = [
-                ["Nombre", "Salario", "Horas Extras", "Pago Horas Extras"]
-            ];
-
-            empleados.forEach(emp => {
-                const pagoHorasExtras = emp.horasExtras * (emp.salario / 160) * 1.5;
-                ws_data.push([emp.nombre, emp.salario, emp.horasExtras, pagoHorasExtras.toFixed(2)]);
-            });
-
-            const ws = XLSX.utils.aoa_to_sheet(ws_data);
-            const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, "Horas Extras");
-
-            XLSX.writeFile(wb, "Reporte_Horas_Extras.xlsx");
-        }
-    </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
