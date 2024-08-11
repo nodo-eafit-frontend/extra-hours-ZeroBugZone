@@ -1,9 +1,52 @@
-{
-	"horaExtra": {
-		"diurna": 0.25,
-		"nocturna": 0.75,
-		"diurnaFestiva": 1,
-		"nocturnaFestiva": 1.5
+[
+	{
+		"empleado": 1,
+		"fecha": "22/07/2024",
+		"horasExtras": 2
 	},
-	"horasMes": 350
-}
+	{
+		"empleado": 2,
+		"fecha": "23/07/2024",
+		"horasExtras": 3
+	},
+	{
+		"empleado": 3,
+		"fecha": "24/07/2024",
+		"horasExtras": 1
+	},
+	{
+		"empleado": 4,
+		"fecha": "25/07/2024",
+		"horasExtras": 4
+	},
+	{
+		"empleado": 5,
+		"fecha": "26/07/2024",
+		"horasExtras": 5
+	},
+	{
+		"empleado": 6,
+		"fecha": "27/07/2024",
+		"horasExtras": 2
+	},
+	{
+		"empleado": 7,
+		"fecha": "28/07/2024",
+		"horasExtras": 6
+	},
+	{
+		"empleado": 8,
+		"fecha": "29/07/2024",
+		"horasExtras": 3
+	},
+	{
+		"empleado": 9,
+		"fecha": "30/07/2024",
+		"horasExtras": 4
+	},
+	{
+		"empleado": 10,
+		"fecha": "31/07/2024",
+		"horasExtras": 5
+	}
+]

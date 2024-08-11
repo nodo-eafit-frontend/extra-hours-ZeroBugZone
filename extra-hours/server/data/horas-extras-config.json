@@ -1,0 +1,9 @@
+{
+	"horaExtra": {
+		"diurna": 0.25,
+		"nocturna": 0.75,
+		"diurnaFestiva": 1,
+		"nocturnaFestiva": 1.5
+	},
+	"horasMes": 350
+}
