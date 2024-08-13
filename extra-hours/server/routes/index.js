@@ -1,25 +1,15 @@
 const express = require('express');
-const { getStats, postStats } = require('../apis/stats');
 const { getEmpleadoInfo } = require('../apis/get_empleados');
-// const { getTipsInfo } = require('') // TODO: completar
-
-
-
-
+const {getExtraHours, createExtraHour, updateExtraHour, deleteExtraHour} = require('../apis/extra-hours');
 
 
 const router = express.Router();
 
-
-
-
-
 router.get('/getEmpleadoInfo/:id', getEmpleadoInfo);
-
-router.get('/stats', getStats);
-router.post('/stats', postStats);
-
-// router.get(); // TODO: Agregar API con su respectivo método
+router.get('/extra-hours/:id', getExtraHours);
+router.post('/extra-hours', createExtraHour);
+router.put('/extra-hours/:id', updateExtraHour);
+router.delete('/extra-hours/:id', deleteExtraHour);
 
 module.exports = router;
  

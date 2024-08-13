@@ -1,4 +1,4 @@
-/*require('dotenv').config();
+require('dotenv').config();
 const { readJsonFile } = require('../utils/json-reader');
 const xlsx = require('xlsx');
 
@@ -42,4 +42,4 @@ const exportReport = async (req, res) => {
 
 module.exports = {
   exportReport,
-};*/
+};
