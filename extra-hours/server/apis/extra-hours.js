@@ -45,9 +45,9 @@ const updateExtraHour = async (req, res) => {
 
 const deleteExtraHour = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id_registro } = req.params;
     const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
-    const index = reportData.findIndex(eh => eh.id === parseInt(id));
+    const index = reportData.findIndex(eh => eh.id_registro === parseInt(id_registro));
     if (index !== -1) {
       const deletedExtraHour = reportData.splice(index, 1)[0];
       await fs.writeFile(process.env.JSON_Horas_Extras_INFO, JSON.stringify(reportData, null, 2));
