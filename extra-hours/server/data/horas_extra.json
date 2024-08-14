@@ -1,6 +1,28 @@
 [
   {
-    "id_registro": 3,
+    "id_registro": 1,
+    "id_empleado": 1,
+    "fecha": "22/07/2024",
+    "horasExtras": 2,
+    "hours": {
+      "diurna": 0,
+      "nocturna": 2,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    }
+  },
+  {
+    "id_empleado": 1,
+    "fecha": "23/07/2024",
+    "horasExtras": 3,
+    "hours": {
+      "diurna": 0,
+      "nocturna": 0,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    }
+  },
+  {
     "id_empleado": 3,
     "fecha": "24/07/2024",
     "horasExtras": 1,
@@ -70,32 +92,5 @@
       "diurnaFestiva": 0,
       "nocturnaFestiva": 0
     }
-  },
-  [
-    {
-      "id_registro": 11,
-      "id_empleado": 11,
-      "fecha": "01/08/2024",
-      "horasExtras": 3,
-      "hours": {
-        "diurna": 0,
-        "nocturna": 1,
-        "diurnaFestiva": 0,
-        "nocturnaFestiva": 0
-      }
-    }
-  ],
-  {
-    "id_registro": 3,
-    "id_empleado": 356465465465,
-    "fecha": "24/08/2024",
-    "horasExtras": 5,
-    "hours": {
-      "diurna": 0,
-      "nocturna": 0,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    },
-    "id": 8
   }
 ]

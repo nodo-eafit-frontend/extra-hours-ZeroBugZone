@@ -13,4 +13,3 @@ router.put('/extra-hours/:id_registro', updateExtraHour);
 router.delete('/extra-hours/:id_registro', deleteExtraHour);
 router.get('/export', exportReport);
 module.exports = router;
- 

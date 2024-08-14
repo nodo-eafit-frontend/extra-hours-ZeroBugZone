@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import BasicButtons from "./components/Boton";
 import { InputNumber } from "antd";
 import Brand from "./components/Brand";
 
@@ -43,7 +44,7 @@ function App() {
         {horasExtras
           ? "las Horas extras son" + horasExtras: "No hay horas extras"}
       </p>
-    
+      <BasicButtons />
     </>
   );
 }
