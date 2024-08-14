@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import BasicButtons from "./components/Boton";
+import CustomButton from "./components/Boton_encabezado";
 import { InputNumber } from "antd";
 import Brand from "./components/Brand";
 
@@ -46,6 +47,9 @@ function App() {
           : "No hay horas extras"}
       </p>
       <BasicButtons />
+      <div >
+            <CustomButton text="AGREGAR NUEVA HORA EXTRA" />
+        </div>
     </>
   );
 }
