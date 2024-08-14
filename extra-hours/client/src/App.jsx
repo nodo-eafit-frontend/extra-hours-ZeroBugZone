@@ -47,10 +47,9 @@ function App() {
           : "No hay horas extras"}
       </p>
       <BasicButtons />
-      <div>
-      <CustomButton text="AGREGAR NUEVA HORA EXTRA" />
-      <CustomButton text="ELIMINAR HORA EXTRA" sx={{ marginLeft: '10px' }} />
-    </div>
+      <div >
+            <CustomButton text="AGREGAR NUEVA HORA EXTRA" />
+        </div>
     </>
   );
 }
