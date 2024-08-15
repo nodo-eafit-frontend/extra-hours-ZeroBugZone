@@ -17,7 +17,7 @@ const createExtraHour = async (req, res) => {
   try {
     const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
     const newExtraHour = req.body;
-    newExtraHour.id = reportData.length + 1;
+    newExtraHour.id_registro = reportData.length + 1;
     reportData.push(newExtraHour);
     await fs.writeFile(process.env.JSON_Horas_Extras_INFO, JSON.stringify(reportData, null, 2));
     res.status(201).json(newExtraHour);

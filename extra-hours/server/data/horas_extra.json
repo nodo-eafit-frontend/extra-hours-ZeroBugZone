@@ -70,18 +70,6 @@
     }
   },
   {
-    "id_registro": 9,
-    "id_empleado": 9,
-    "fecha": "30/07/2024",
-    "horasExtras": 4,
-    "hours": {
-      "diurna": 0,
-      "nocturna": 0,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    }
-  },
-  {
     "id_registro": 10,
     "id_empleado": 10,
     "fecha": "31/07/2024",
