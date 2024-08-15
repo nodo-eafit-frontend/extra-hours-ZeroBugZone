@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import BasicButtons from "./components/Boton";
-import CustomButton from "./components/BotonEncabezado";
+import BasicButtons from "./components/Botones/Boton";
+import CustomButton from "./components/Botones/BotonEncabezado";
 import BuscarEmpleado from "./components/BuscarEmpleado";
 import { InputNumber } from "antd";
 import Brand from "./components/Brand";
 import EmpleadoBuscador from './components/EmpleadoBuscador';
 import MyButtonComponent from './components/MyButtonComponent';
+import Observaciones from './components/Botones/BotonObservaciones';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -69,6 +70,10 @@ function App() {
         <h4>Fecha</h4>
       <CustomButton text="22/08/2024" />
       </div>
+      <div>
+            <h1>Observaciones</h1>
+            <Observaciones />
+        </div>
 
     </>
   );

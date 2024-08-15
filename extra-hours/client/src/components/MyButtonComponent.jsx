@@ -11,21 +11,21 @@ const MyButtonComponent = ({ buttonText }) => {
       <Button
         variant="outlined"
         sx={{
-          backgroundColor: '#FFFFFF', // Fondo blanco
+          backgroundColor: '#FFFFFF', 
           color: '#283593', 
-          borderRadius: '8px',          // Color del texto
-          borderColor: '#BDBDBD',     // Color del borde (delineado)
-          borderWidth: 2,             // Ancho del borde
-          fontWeight: 'bold',         // Texto en negrita
+          borderRadius: '8px',          
+          borderColor: '#BDBDBD',     
+          borderWidth: 2,             
+          fontWeight: 'bold',         
           padding: '24px 24px',
-          width: '200px',         // Hacer el botón más ancho
+          width: '200px',         
           '&:hover': {
-            backgroundColor: '#F5F5F5', // Fondo gris claro al pasar el mouse
-            borderColor: '#9E9E9E',     // Borde gris más oscuro al pasar el mouse
+            backgroundColor: '#F5F5F5', 
+            borderColor: '#9E9E9E',     
           },
         }}
-        disableRipple // Elimina el efecto de ripple al hacer clic
-        disabled // Deshabilita el clic en el botón
+        disableRipple 
+        disabled 
       >
       </Button>
     </Container>
