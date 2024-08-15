@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import BasicButtons from "./components/Boton";
+<<<<<<< HEAD
+=======
+import CustomButton from "./components/BotonEncabezado";
+import BuscarEmpleado from "./components/BuscarEmpleado";
+>>>>>>> 4a45271004300a75bbfd78f0f31192fd959b071c
 import { InputNumber } from "antd";
 import Brand from "./components/Brand";
 import EmpleadoBuscador from './components/EmpleadoBuscador';
@@ -48,6 +53,15 @@ function App() {
           ? "las Horas extras son" + horasExtras: "No hay horas extras"}
       </p>
       <BasicButtons />
+<<<<<<< HEAD
+=======
+      <div style={{ marginTop: '50px' }}>
+            <CustomButton text="AGREGAR NUEVA HORA EXTRA" />
+      </div>
+      <div style={{ marginTop: '50px' }}>
+        <BuscarEmpleado />
+      </div>
+>>>>>>> 4a45271004300a75bbfd78f0f31192fd959b071c
     </>
   );
 }
