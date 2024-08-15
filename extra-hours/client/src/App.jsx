@@ -6,6 +6,7 @@ import BuscarEmpleado from "./components/BuscarEmpleado";
 import { InputNumber } from "antd";
 import Brand from "./components/Brand";
 import EmpleadoBuscador from './components/EmpleadoBuscador';
+import MyButtonComponent from './components/MyButtonComponent';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -56,8 +57,19 @@ function App() {
       </div>
       <div style={{ marginTop: '50px' }}>
         <BuscarEmpleado />
+      </div >
+
+      <div style={{ marginTop: '55px', display: 'flex', justifyContent: 'space-between'}}>
+      <MyButtonComponent buttonText="Empleado"/>
+      <MyButtonComponent buttonText="Salario"/>
+      <MyButtonComponent buttonText="Cargo"/>
+      <MyButtonComponent buttonText="Supervisor"/>
       </div>
-      
+      <div style={{ marginTop: '50px' }}>
+        <h4>Fecha</h4>
+      <CustomButton text="22/08/2024" />
+      </div>
+
     </>
   );
 }
