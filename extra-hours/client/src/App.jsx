@@ -3,6 +3,7 @@ import "./App.css";
 import BasicButtons from "./components/Boton";
 import { InputNumber } from "antd";
 import Brand from "./components/Brand";
+import EmpleadoBuscador from './components/EmpleadoBuscador';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,8 +30,10 @@ function App() {
       
 
       <div>
+      <EmpleadoBuscador />
+    </div>
         <InputNumber min={1} max={10} defaultValue={3} onChange={onChange} />;
-      </div>
+      
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
