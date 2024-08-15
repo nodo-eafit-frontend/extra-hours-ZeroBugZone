@@ -55,7 +55,7 @@ function App() {
       <BasicButtons />
 <<<<<<< HEAD
 =======
-      <div style={{ marginTop: '50px' }}>
+      <div style={{ marginTop: '55px' }}>
             <CustomButton text="AGREGAR NUEVA HORA EXTRA" />
       </div>
       <div style={{ marginTop: '50px' }}>
