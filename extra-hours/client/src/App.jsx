@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import BasicButtons from "./components/Botones/Boton";
 import CustomButton from "./components/Botones/BotonEncabezado";
-import BuscarEmpleado from "./components/BuscarEmpleado";
+import BuscarEmpleado from "./components/Botones/BuscarEmpleado";
 import { InputNumber } from "antd";
 import Brand from "./components/Brand";
 import EmpleadoBuscador from './components/EmpleadoBuscador';
-import MyButtonComponent from './components/MyButtonComponent';
+import InfButton from './components/Botones/InfButton';
 import Observaciones from './components/Botones/BotonObservaciones';
+import CheckBox from './components/Botones/CheckBoxes';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -61,10 +62,10 @@ function App() {
       </div >
 
       <div style={{ marginTop: '55px', display: 'flex', justifyContent: 'space-between'}}>
-      <MyButtonComponent buttonText="Empleado"/>
-      <MyButtonComponent buttonText="Salario"/>
-      <MyButtonComponent buttonText="Cargo"/>
-      <MyButtonComponent buttonText="Supervisor"/>
+      <InfButton buttonText="Empleado"/>
+      <InfButton buttonText="Salario"/>
+      <InfButton buttonText="Cargo"/>
+      <InfButton buttonText="Supervisor"/>
       </div>
       <div style={{ marginTop: '50px' }}>
         <h4>Fecha</h4>
@@ -73,7 +74,11 @@ function App() {
       <div>
             <h1>Observaciones</h1>
             <Observaciones />
-        </div>
+      </div>
+      <div>
+        <h1>Mi Aplicación</h1>
+        <CheckBox />
+      </div>
 
     </>
   );
