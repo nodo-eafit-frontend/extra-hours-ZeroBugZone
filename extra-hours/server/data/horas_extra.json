@@ -2,7 +2,7 @@
   {
     "id_registro": 1,
     "id_empleado": 1,
-    "fecha": "22/07/2024",
+    "fecha": "2024-07-22",
     "horasExtras": 2,
     "hours": {
       "diurna": 0,
@@ -13,7 +13,7 @@
   },
   {
     "id_empleado": 1,
-    "fecha": "23/07/2024",
+    "fecha": "2024-07-23",
     "horasExtras": 3,
     "hours": {
       "diurna": 0,
@@ -24,7 +24,7 @@
   },
   {
     "id_empleado": 3,
-    "fecha": "24/07/2024",
+    "fecha": "2024-07-24",
     "horasExtras": 1,
     "hours": {
       "diurna": 0,
@@ -36,7 +36,7 @@
   {
     "id_registro": 6,
     "id_empleado": 6,
-    "fecha": "27/07/2024",
+    "fecha": "2024-07-27",
     "horasExtras": 2,
     "hours": {
       "diurna": 0,
@@ -48,7 +48,7 @@
   {
     "id_registro": 7,
     "id_empleado": 7,
-    "fecha": "28/07/2024",
+    "fecha": "2024-07-28",
     "horasExtras": 6,
     "hours": {
       "diurna": 0,
@@ -60,7 +60,7 @@
   {
     "id_registro": 8,
     "id_empleado": 8,
-    "fecha": "29/07/2024",
+    "fecha": "2024-07-29",
     "horasExtras": 3,
     "hours": {
       "diurna": 0,
@@ -72,7 +72,7 @@
   {
     "id_registro": 10,
     "id_empleado": 10,
-    "fecha": "31/07/2024",
+    "fecha": "2024-07-31",
     "horasExtras": 5,
     "hours": {
       "diurna": 0,

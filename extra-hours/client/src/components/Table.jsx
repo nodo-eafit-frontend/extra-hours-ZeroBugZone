@@ -53,11 +53,11 @@ export default function DataTable() {
       headerName: "Salario",
       type: "number",
       width: 110,
-      valueFormatter: (params) => {
+      valueFormatter: (value) => {
         return new Intl.NumberFormat("es-CO", {
           style: "currency",
           currency: "COP",
-        }).format(params.value);
+        }).format(value);
       },
     },
     {
@@ -65,10 +65,9 @@ export default function DataTable() {
       headerName: "Horas Extras",
       type: "number",
       width: 110,
-      valueGetter: (params) => {
-        if (!params?.row) return 0;
+      valueGetter: (value, field) => {
         const horasExtraEmpleado = horasExtra.find(
-          (h) => h.id_empleado === params.row.id
+          (h) => h.id_empleado === field.id
         );
         return horasExtraEmpleado ? horasExtraEmpleado.horasExtras : 0;
       },
@@ -77,12 +76,21 @@ export default function DataTable() {
       field: "fechaHorasExtras",
       headerName: "Fecha Horas Extras",
       width: 150,
-      valueGetter: (params) => {
-        if (!params?.row) return "N/A";
+      type: "date",
+      valueGetter: (value, field) => {
         const horasExtraEmpleado = horasExtra.find(
-          (h) => h.id_empleado === params.row.id
+          (h) => h.id_empleado === field.id
         );
-        return horasExtraEmpleado ? horasExtraEmpleado.fecha : "N/A";
+        return horasExtraEmpleado?.fecha ? Date.parse(horasExtraEmpleado?.fecha) : new Date();
+      },
+      valueFormatter: (value) => {
+        if (!value) return "";
+        return new Intl.DateTimeFormat("es-CO", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }).format(value);
       },
     },
   ];
