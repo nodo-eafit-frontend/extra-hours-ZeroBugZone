@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DataGrid } from "@mui/x-data-grid";
+import  {DataGrid}  from "@mui/x-data-grid";
 
 export default function DataTable() {
   const [error, setError] = useState("");

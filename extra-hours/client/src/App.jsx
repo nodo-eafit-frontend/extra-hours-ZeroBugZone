@@ -9,6 +9,7 @@ import EmpleadoBuscador from './components/EmpleadoBuscador';
 import InfButton from './components/Botones/InfButton';
 import Observaciones from './components/Botones/BotonObservaciones';
 import Table from './components/Table';
+import CheckboxComponent from './components/checkBoxComp';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,6 +30,7 @@ function App() {
   return (
     <>
         <div> <Brand/> </div> 
+
 
       <div>
       <EmpleadoBuscador />
@@ -74,6 +76,10 @@ function App() {
       <div>
         <h1>Empleados</h1>
         <Table />
+      </div>
+      <div>
+            <h1>Mi Aplicación</h1>
+            <CheckboxComponent />
       </div>
     </>
   );
