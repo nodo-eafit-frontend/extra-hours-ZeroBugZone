@@ -2,17 +2,17 @@
   {
     "id_registro": 1,
     "id_empleado": 1,
-    "fecha": "22/07/2024",
+    "fecha": "2024-07-22",
     "horasExtras": 2,
     "hours": {
-      "diurna": 0,
+      "diurna": 1,
       "nocturna": 2,
       "diurnaFestiva": 0,
       "nocturnaFestiva": 0
     }
   },
   {
-    "id_empleado": 1,
+    "id_empleado": 2,
     "fecha": "23/07/2024",
     "horasExtras": 3,
     "hours": {
@@ -24,7 +24,7 @@
   },
   {
     "id_empleado": 3,
-    "fecha": "24/07/2024",
+    "fecha": "2024-07-24",
     "horasExtras": 1,
     "hours": {
       "diurna": 0,
@@ -36,7 +36,7 @@
   {
     "id_registro": 6,
     "id_empleado": 6,
-    "fecha": "27/07/2024",
+    "fecha": "2024-07-27",
     "horasExtras": 2,
     "hours": {
       "diurna": 0,
@@ -48,7 +48,7 @@
   {
     "id_registro": 7,
     "id_empleado": 7,
-    "fecha": "28/07/2024",
+    "fecha": "2024-07-28",
     "horasExtras": 6,
     "hours": {
       "diurna": 0,
@@ -60,20 +60,8 @@
   {
     "id_registro": 8,
     "id_empleado": 8,
-    "fecha": "29/07/2024",
+    "fecha": "2024-07-29",
     "horasExtras": 3,
-    "hours": {
-      "diurna": 0,
-      "nocturna": 0,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    }
-  },
-  {
-    "id_registro": 9,
-    "id_empleado": 9,
-    "fecha": "30/07/2024",
-    "horasExtras": 4,
     "hours": {
       "diurna": 0,
       "nocturna": 0,
@@ -84,7 +72,7 @@
   {
     "id_registro": 10,
     "id_empleado": 10,
-    "fecha": "31/07/2024",
+    "fecha": "2024-07-31",
     "horasExtras": 5,
     "hours": {
       "diurna": 0,
@@ -92,5 +80,62 @@
       "diurnaFestiva": 0,
       "nocturnaFestiva": 0
     }
+  },
+  {
+    "id_empleado": 3,
+    "fecha": "23/07/2024",
+    "hours": {
+      "diurna": 3,
+      "nocturna": 4,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "id_registro": 8,
+    "valorHoraExtra": {
+      "diurna": 16071.42857142857,
+      "nocturna": 64285.71428571428,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": "0[object Object][object Object][object Object][object Object]",
+    "cantidadHorasExtra": 7
+  },
+  {
+    "id_empleado": 3,
+    "fecha": "23/07/2024",
+    "hours": {
+      "diurna": 3,
+      "nocturna": 4,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "id_registro": 9,
+    "valorHoraExtra": {
+      "diurna": 16071.42857142857,
+      "nocturna": 64285.71428571428,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": "0[object Object][object Object][object Object][object Object]",
+    "cantidadHorasExtra": 7
+  },
+  {
+    "id_empleado": 3,
+    "fecha": "23/07/2024",
+    "hours": {
+      "diurna": 3,
+      "nocturna": 4,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "id_registro": 10,
+    "valorHoraExtra": {
+      "diurna": 16071.42857142857,
+      "nocturna": 64285.71428571428,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": 80357.14285714286,
+    "cantidadHorasExtra": 7
   }
 ]

@@ -5,9 +5,9 @@ const xlsx = require('xlsx');
 const exportReport = async (req, res) => {
   try {
     const [reportData, empleadosData, configData] = await Promise.all([
-      readJsonFile(process.env.JSON_REPORT_INFO),
-      readJsonFile(process.env.JSON_EMPLEADOS_INFO),
-      readJsonFile(process.env.JSON_CONFIG_INFO)
+      readJsonFile(process.env.JSON_Horas_Extras_INFO),
+      readJsonFile(process.env.JSON_Empleados_INFO),
+      readJsonFile(process.env.JSON_Horas_Extras_Config)
     ]);
 
     const workbook = xlsx.utils.book_new();

@@ -1,4 +1,5 @@
 require('dotenv').config();
+const calculoHoras = require('../utils/calculo-horas');
 const { readJsonFile } = require('../utils/json-reader');
 const fs = require('fs').promises;
 
@@ -13,15 +14,37 @@ const getExtraHours = async (req, res) => {
   }
 };
 
+const getAllExtraHour = async (req, res) => {
+  try {
+    const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
+    res.status(200).json(reportData);
+  } catch (error) {
+    res.status(400).json({ message: 'Error al obtener las horas extra', error: error.message });
+  }
+};
+
 const createExtraHour = async (req, res) => {
   try {
     const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
     const newExtraHour = req.body;
-    newExtraHour.id = reportData.length + 1;
-    reportData.push(newExtraHour);
+   const config = await readJsonFile(process.env.JSON_Horas_Extras_Config);
+   const empleados = await readJsonFile(process.env.JSON_Empleados_INFO);
+    newExtraHour.id_registro = reportData.length + 1;
+
+    const empleado = empleados.find(e => e.id === newExtraHour.id_empleado);
+    const salario = empleado.salario;
+
+    const calculoHorasExtra = calculoHoras( newExtraHour.hours, salario, config);
+    
+
+
+    const dataResult = { ...newExtraHour, ...calculoHorasExtra }
+    reportData.push(dataResult);
+
     await fs.writeFile(process.env.JSON_Horas_Extras_INFO, JSON.stringify(reportData, null, 2));
-    res.status(201).json(newExtraHour);
+    res.status(201).json(dataResult);
   } catch (error) {
+    console.log(error);
     res.status(400).json({ message: 'Error al crear hora extra', error: error.message });
   }
 };
@@ -62,6 +85,7 @@ const deleteExtraHour = async (req, res) => {
 
 module.exports = {
   getExtraHours,
+  getAllExtraHour,
   createExtraHour,
   updateExtraHour,
   deleteExtraHour,

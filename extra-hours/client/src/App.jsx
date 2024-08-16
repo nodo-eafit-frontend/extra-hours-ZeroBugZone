@@ -8,7 +8,7 @@ import Brand from "./components/Brand";
 import EmpleadoBuscador from './components/EmpleadoBuscador';
 import InfButton from './components/Botones/InfButton';
 import Observaciones from './components/Botones/BotonObservaciones';
-import CheckBox from './components/Botones/CheckBoxes';
+import Table from './components/Table';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,25 +21,21 @@ function App() {
     fetch("http://localhost:4000/extra-hours/" + id)
       .then((res) => res.json())
       .then((data) => {
-        let horas = 0;
-        data.forEach((element) => {
-          horas += element.horasExtras;
-        });
-        setHoras(horas);
+        const { extraHoras } = data;
+        setHoras(extraHoras);
       });
   }, [id]);
 
   return (
     <>
-        <Brand />
-      
+        <div> <Brand/> </div> 
 
       <div>
       <EmpleadoBuscador />
     </div>
         <InputNumber min={1} max={10} defaultValue={3} onChange={onChange} />;
       
-      <h1>Vite + React</h1>
+      
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -74,12 +70,11 @@ function App() {
       <div>
             <h1>Observaciones</h1>
             <Observaciones />
-      </div>
+        </div>
       <div>
-        <h1>Mi Aplicación</h1>
-        <CheckBox />
+        <h1>Empleados</h1>
+        <Table />
       </div>
-
     </>
   );
 }
