@@ -13,6 +13,15 @@ const getExtraHours = async (req, res) => {
   }
 };
 
+const getAllExtraHour = async (req, res) => {
+  try {
+    const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
+    res.status(200).json(reportData);
+  } catch (error) {
+    res.status(400).json({ message: 'Error al obtener las horas extra', error: error.message });
+  }
+};
+
 const createExtraHour = async (req, res) => {
   try {
     const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
@@ -62,6 +71,7 @@ const deleteExtraHour = async (req, res) => {
 
 module.exports = {
   getExtraHours,
+  getAllExtraHour,
   createExtraHour,
   updateExtraHour,
   deleteExtraHour,

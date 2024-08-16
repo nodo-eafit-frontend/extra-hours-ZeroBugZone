@@ -8,6 +8,7 @@ import Brand from "./components/Brand";
 import EmpleadoBuscador from './components/EmpleadoBuscador';
 import MyButtonComponent from './components/MyButtonComponent';
 import Observaciones from './components/Botones/BotonObservaciones';
+import Table from './components/Table';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -74,7 +75,10 @@ function App() {
             <h1>Observaciones</h1>
             <Observaciones />
         </div>
-
+      <div>
+        <h1>Empleados</h1>
+        <Table />
+      </div>
     </>
   );
 }
