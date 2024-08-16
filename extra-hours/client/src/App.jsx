@@ -21,25 +21,21 @@ function App() {
     fetch("http://localhost:4000/extra-hours/" + id)
       .then((res) => res.json())
       .then((data) => {
-        let horas = 0;
-        data.forEach((element) => {
-          horas += element.horasExtras;
-        });
-        setHoras(horas);
+        const { extraHoras } = data;
+        setHoras(extraHoras);
       });
   }, [id]);
 
   return (
     <>
-        <Brand />
-      
+       <div> <Brand/> </div> 
 
       <div>
       <EmpleadoBuscador />
     </div>
         <InputNumber min={1} max={10} defaultValue={3} onChange={onChange} />;
       
-      <h1>Vite + React</h1>
+      
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

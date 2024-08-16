@@ -5,15 +5,15 @@
     "fecha": "2024-07-22",
     "horasExtras": 2,
     "hours": {
-      "diurna": 0,
+      "diurna": 1,
       "nocturna": 2,
       "diurnaFestiva": 0,
       "nocturnaFestiva": 0
     }
   },
   {
-    "id_empleado": 1,
-    "fecha": "2024-07-23",
+    "id_empleado": 2,
+    "fecha": "23/07/2024",
     "horasExtras": 3,
     "hours": {
       "diurna": 0,
@@ -80,5 +80,62 @@
       "diurnaFestiva": 0,
       "nocturnaFestiva": 0
     }
+  },
+  {
+    "id_empleado": 3,
+    "fecha": "23/07/2024",
+    "hours": {
+      "diurna": 3,
+      "nocturna": 4,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "id_registro": 8,
+    "valorHoraExtra": {
+      "diurna": 16071.42857142857,
+      "nocturna": 64285.71428571428,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": "0[object Object][object Object][object Object][object Object]",
+    "cantidadHorasExtra": 7
+  },
+  {
+    "id_empleado": 3,
+    "fecha": "23/07/2024",
+    "hours": {
+      "diurna": 3,
+      "nocturna": 4,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "id_registro": 9,
+    "valorHoraExtra": {
+      "diurna": 16071.42857142857,
+      "nocturna": 64285.71428571428,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": "0[object Object][object Object][object Object][object Object]",
+    "cantidadHorasExtra": 7
+  },
+  {
+    "id_empleado": 3,
+    "fecha": "23/07/2024",
+    "hours": {
+      "diurna": 3,
+      "nocturna": 4,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "id_registro": 10,
+    "valorHoraExtra": {
+      "diurna": 16071.42857142857,
+      "nocturna": 64285.71428571428,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": 80357.14285714286,
+    "cantidadHorasExtra": 7
   }
 ]
