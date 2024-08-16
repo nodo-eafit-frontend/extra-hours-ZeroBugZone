@@ -1,8 +1,8 @@
 import { DataGrid } from '@mui/x-data-grid';
 
 // Asumimos que has importado los datos de los JSON
-import empleados from './empleados.json';
-import horasExtra from './horasExtra.json';
+import empleados from 'JSON_Empleados_INFO';
+import horasExtra from 'JSON_Horas_Extra_INFO';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
