@@ -14,6 +14,15 @@ const getExtraHours = async (req, res) => {
   }
 };
 
+const getAllExtraHour = async (req, res) => {
+  try {
+    const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
+    res.status(200).json(reportData);
+  } catch (error) {
+    res.status(400).json({ message: 'Error al obtener las horas extra', error: error.message });
+  }
+};
+
 const createExtraHour = async (req, res) => {
   try {
     const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
@@ -25,7 +34,6 @@ const createExtraHour = async (req, res) => {
     const empleado = empleados.find(e => e.id === newExtraHour.id_empleado);
     const salario = empleado.salario;
 
-    
     const calculoHorasExtra = calculoHoras( newExtraHour.hours, salario, config);
     
 
@@ -77,6 +85,7 @@ const deleteExtraHour = async (req, res) => {
 
 module.exports = {
   getExtraHours,
+  getAllExtraHour,
   createExtraHour,
   updateExtraHour,
   deleteExtraHour,
