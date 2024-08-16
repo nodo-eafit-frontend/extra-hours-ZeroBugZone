@@ -9,7 +9,7 @@ import EmpleadoBuscador from './components/EmpleadoBuscador';
 import InfButton from './components/Botones/InfButton';
 import Observaciones from './components/Botones/BotonObservaciones';
 import Table from './components/Table';
-import CheckboxComponent from './components/checkBoxComp';
+import CheckboxComponent from './components/TipoHoraExtra';
 
 function App() {
   const [count, setCount] = useState(0);
