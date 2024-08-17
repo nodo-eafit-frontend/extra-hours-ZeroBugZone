@@ -1,38 +1,54 @@
-import PropTypes from 'prop-types';
-import Button from '@mui/material/Button';
-import { Container, Typography } from '@mui/material';
+import PropTypes from "prop-types";
+import Button from "@mui/material/Button";
+import { Container, Typography, Box } from "@mui/material";
+import {} from "module";
 
-const InfButton = ({ buttonText }) => {
+const InfButton = ({ empleadoInfo }) => {
   return (
-    <Container>
-      <Typography variant="h5" gutterBottom>
-      {buttonText}
+    <Container className="container">
+      <Typography variant="h5" gutterBottom className="typography-title">
+        Información del Empleado
       </Typography>
-      <Button
-        variant="outlined"
-        sx={{
-          backgroundColor: '#FFFFFF',
-          color: '#283593',
-          borderRadius: '8px',
-          borderColor: '#BDBDBD',
-          borderWidth: 2,
-          fontWeight: 'bold',
-          padding: '24px 24px',
-          width: '200px',
-          '&:hover': {
-            backgroundColor: '#F5F5F5',
-            borderColor: '#9E9E9E',
-          },
-        }}
-        disableRipple
-        disabled
-      >
-      </Button>
+      <Box className="button-box">
+        <Box>
+          <Typography variant="h6">Nombre</Typography>
+          <Button variant="outlined" className="button" disableRipple disabled>
+            {empleadoInfo.nombre}
+          </Button>
+        </Box>
+        <Box>
+          <Typography variant="h6">Cargo</Typography>
+          <Button variant="outlined" className="button" disableRipple disabled>
+            {empleadoInfo.cargo}
+          </Button>
+        </Box>
+        <Box>
+          <Typography variant="h6">Supervisor</Typography>
+          <Button variant="outlined" className="button" disableRipple disabled>
+            {empleadoInfo.supervisor}
+          </Button>
+        </Box>
+        <Box>
+          <Typography variant="h6">Salario</Typography>
+          <Button variant="outlined" className="button" disableRipple disabled>
+            {new Intl.NumberFormat("es-CO", {
+              style: "currency",
+              currency: "COP",
+            }).format(empleadoInfo.salario)}
+          </Button>
+        </Box>
+      </Box>
     </Container>
   );
 };
 
-export default InfButton;
 InfButton.propTypes = {
-  buttonText: PropTypes.string.isRequired,
+  empleadoInfo: PropTypes.shape({
+    nombre: PropTypes.string.isRequired,
+    cargo: PropTypes.string.isRequired,
+    supervisor: PropTypes.string.isRequired,
+    salario: PropTypes.number.isRequired,
+  }).isRequired,
 };
+
+export default InfButton;

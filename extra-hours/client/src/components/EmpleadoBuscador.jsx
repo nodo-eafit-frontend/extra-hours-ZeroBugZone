@@ -1,20 +1,23 @@
 import { useState } from "react";
-import { TextField, Button, Card, CardContent, Typography } from '@mui/material';
-import { Search as SearchIcon } from '@mui/icons-material';
+import { TextField, Button, Typography } from "@mui/material";
+import { Search as SearchIcon } from "@mui/icons-material";
+import InfButton from "./Botones/InfButton"; // Asegúrate de que la ruta sea correcta
 
 const EmpleadoBuscador = () => {
-  const [empleadoId, setEmpleadoId] = useState('');
+  const [empleadoId, setEmpleadoId] = useState("");
   const [empleadoInfo, setEmpleadoInfo] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleSearch = async () => {
-    setError('');
+    setError("");
     setEmpleadoInfo(null);
 
     try {
-      const response = await fetch('http://localhost:4000/getEmpleadoInfo/'+empleadoId);
+      const response = await fetch(
+        "http://localhost:4000/getEmpleadoInfo/" + empleadoId
+      );
       if (!response.ok) {
-        throw new Error('Empleado no encontrado');
+        throw new Error("Empleado no encontrado");
       }
       const data = await response.json();
       setEmpleadoInfo(data);
@@ -30,7 +33,7 @@ const EmpleadoBuscador = () => {
         variant="outlined"
         value={empleadoId}
         onChange={(e) => setEmpleadoId(e.target.value)}
-        style={{ marginRight: '10px' }}
+        style={{ marginRight: "10px" }}
       />
       <Button
         variant="contained"
@@ -41,22 +44,15 @@ const EmpleadoBuscador = () => {
       </Button>
 
       {error && (
-        <Typography color="error" style={{ marginTop: '10px' }}>
+        <Typography color="error" style={{ marginTop: "10px" }}>
           {error}
         </Typography>
       )}
 
       {empleadoInfo && (
-        <Card style={{ marginTop: '20px', maxWidth: '300px' }}>
-          <CardContent>
-            <Typography variant="h6">{empleadoInfo.nombre}</Typography>
-            <Typography>Cargo: {empleadoInfo.cargo}</Typography>
-            <Typography>Supervisor: {empleadoInfo.supervisor}</Typography>
-            <Typography>
-              Salario: {new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(empleadoInfo.salario)}
-            </Typography>
-          </CardContent>
-        </Card>
+        <div style={{ marginTop: "20px" }}>
+          <InfButton empleadoInfo={empleadoInfo} />
+        </div>
       )}
     </div>
   );

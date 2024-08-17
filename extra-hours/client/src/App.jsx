@@ -5,11 +5,10 @@ import CustomButton from "./components/Botones/BotonEncabezado";
 import BuscarEmpleado from "./components/Botones/BuscarEmpleado";
 import { InputNumber } from "antd";
 import Brand from "./components/Brand";
-import EmpleadoBuscador from './components/EmpleadoBuscador';
-import InfButton from './components/Botones/InfButton';
-import Observaciones from './components/Botones/BotonObservaciones';
-import Table from './components/Table';
-import CheckboxComponent from './components/TipoHoraExtra';
+import EmpleadoBuscador from "./components/EmpleadoBuscador";
+import Observaciones from "./components/Botones/BotonObservaciones";
+import Table from "./components/Table";
+import CheckboxComponent from "./components/TipoHoraExtra";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,15 +28,14 @@ function App() {
 
   return (
     <>
-        <div> <Brand/> </div> 
-
-
       <div>
-      <EmpleadoBuscador />
-    </div>
-        <InputNumber min={1} max={10} defaultValue={3} onChange={onChange} />;
-      
-      
+        {" "}
+        <Brand />{" "}
+      </div>
+      <div>
+        <EmpleadoBuscador />
+      </div>
+      <InputNumber min={1} max={10} defaultValue={3} onChange={onChange} />;
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -48,38 +46,32 @@ function App() {
       </div>
       <p className="read-the-docs">
         {horasExtras
-          ? "las Horas extras son" + horasExtras: "No hay horas extras"}
+          ? "las Horas extras son" + horasExtras
+          : "No hay horas extras"}
       </p>
       <BasicButtons />
-
-      <div style={{ marginTop: '55px' }}>
-            <CustomButton text="AGREGAR NUEVA HORA EXTRA" />
+      <div style={{ marginTop: "55px" }}>
+        <CustomButton text="AGREGAR NUEVA HORA EXTRA" />
       </div>
-      <div style={{ marginTop: '50px' }}>
+      <div style={{ marginTop: "50px" }}>
+        <h1>Hola</h1>
         <BuscarEmpleado />
-      </div >
-
-      <div style={{ marginTop: '55px', display: 'flex', justifyContent: 'space-between'}}>
-      <InfButton buttonText="Empleado"/>
-      <InfButton buttonText="Salario"/>
-      <InfButton buttonText="Cargo"/>
-      <InfButton buttonText="Supervisor"/>
       </div>
-      <div style={{ marginTop: '50px' }}>
+      <div style={{ marginTop: "50px" }}>
         <h4>Fecha</h4>
-      <CustomButton text="22/08/2024" />
+        <CustomButton text="22/08/2024" />
       </div>
       <div>
-            <h1>Observaciones</h1>
-            <Observaciones />
-        </div>
+        <h1>Observaciones</h1>
+        <Observaciones />
+      </div>
       <div>
         <h1>Empleados</h1>
         <Table />
       </div>
       <div>
-            <h1>Mi Aplicación</h1>
-            <CheckboxComponent />
+        <h1></h1>
+        <CheckboxComponent />
       </div>
     </>
   );
