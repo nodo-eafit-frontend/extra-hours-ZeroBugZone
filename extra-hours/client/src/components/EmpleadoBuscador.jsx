@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TextField, Button, Typography } from "@mui/material";
 import { Search as SearchIcon } from "@mui/icons-material";
-import InfButton from "./Botones/InfButton"; // Asegúrate de que la ruta sea correcta
+import InfButton from "./InfButton"; // Asegúrate de que la ruta sea correcta
 
 const EmpleadoBuscador = () => {
   const [empleadoId, setEmpleadoId] = useState("");

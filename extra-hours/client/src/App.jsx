@@ -9,6 +9,7 @@ import EmpleadoBuscador from "./components/EmpleadoBuscador";
 import Observaciones from "./components/Botones/BotonObservaciones";
 import Table from "./components/Table";
 import CheckboxComponent from "./components/TipoHoraExtra";
+import CustomDateInput from "./components/AgregarFecha";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -59,7 +60,7 @@ function App() {
       </div>
       <div style={{ marginTop: "50px" }}>
         <h4>Fecha</h4>
-        <CustomButton text="22/08/2024" />
+        <CustomDateInput />
       </div>
       <div>
         <h1>Observaciones</h1>

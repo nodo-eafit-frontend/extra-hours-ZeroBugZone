@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
 import { Container, Typography, Box } from "@mui/material";
-import {} from "module";
+import "../utils/InfButton.scss";
 
 const InfButton = ({ empleadoInfo }) => {
   return (
