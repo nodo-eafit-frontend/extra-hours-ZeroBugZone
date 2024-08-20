@@ -85,5 +85,24 @@
     },
     "totalValorHoraExtra": 43478.260869565216,
     "cantidadHorasExtra": 2
+  },
+  {
+    "horasExtras": [
+      {
+        "fecha": "2024-08-19",
+        "tipoHora": "nocturna",
+        "cantidadHoras": "5",
+        "observaciones": "Mejoras continuas"
+      }
+    ],
+    "empleadoId": 3,
+    "valorHoraExtra": {
+      "diurna": 0,
+      "nocturna": 122282.60869565216,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": 122282.60869565216,
+    "cantidadHorasExtra": 5
   }
 ]
