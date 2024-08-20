@@ -1,141 +1,45 @@
 [
   {
-    "id_registro": 1,
-    "id_empleado": 1,
-    "fecha": "2024-07-22",
-    "horasExtras": 2,
-    "hours": {
-      "diurna": 1,
-      "nocturna": 2,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    }
-  },
-  {
-    "id_empleado": 2,
-    "fecha": "23/07/2024",
-    "horasExtras": 3,
-    "hours": {
-      "diurna": 0,
-      "nocturna": 0,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    }
-  },
-  {
-    "id_empleado": 3,
-    "fecha": "2024-07-24",
-    "horasExtras": 1,
-    "hours": {
-      "diurna": 0,
-      "nocturna": 0,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    }
-  },
-  {
-    "id_registro": 6,
-    "id_empleado": 6,
-    "fecha": "2024-07-27",
-    "horasExtras": 2,
-    "hours": {
-      "diurna": 0,
-      "nocturna": 0,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    }
-  },
-  {
-    "id_registro": 7,
-    "id_empleado": 7,
-    "fecha": "2024-07-28",
-    "horasExtras": 6,
-    "hours": {
-      "diurna": 0,
-      "nocturna": 0,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    }
-  },
-  {
-    "id_registro": 8,
-    "id_empleado": 8,
-    "fecha": "2024-07-29",
-    "horasExtras": 3,
-    "hours": {
-      "diurna": 0,
-      "nocturna": 0,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    }
-  },
-  {
-    "id_registro": 10,
-    "id_empleado": 10,
-    "fecha": "2024-07-31",
-    "horasExtras": 5,
-    "hours": {
-      "diurna": 0,
-      "nocturna": 0,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    }
-  },
-  {
-    "id_empleado": 3,
-    "fecha": "23/07/2024",
-    "hours": {
-      "diurna": 3,
-      "nocturna": 4,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    },
-    "id_registro": 8,
+    "empleadoId": 1,
+    "horasExtras": [
+      {
+        "fecha": "2024-08-19",
+        "tipoHora": "diurna",
+        "cantidadHoras": "1",
+        "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-15",
+        "tipoHora": "diurna",
+        "cantidadHoras": "3",
+        "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-19",
+        "tipoHora": "nocturna",
+        "cantidadHoras": "1",
+        "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-19",
+        "tipoHora": "nocturnaFestiva",
+        "cantidadHoras": "1",
+        "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-16",
+        "tipoHora": "diurnaFestiva",
+        "cantidadHoras": "5",
+        "observaciones": "este es un nuevo registro de hora extra diurna festiva"
+      }
+    ],
     "valorHoraExtra": {
-      "diurna": 16071.42857142857,
-      "nocturna": 64285.71428571428,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
+      "diurna": 23913.043478260868,
+      "nocturna": 17934.782608695652,
+      "diurnaFestiva": 119565.21739130434,
+      "nocturnaFestiva": 35869.565217391304
     },
-    "totalValorHoraExtra": "0[object Object][object Object][object Object][object Object]",
-    "cantidadHorasExtra": 7
-  },
-  {
-    "id_empleado": 3,
-    "fecha": "23/07/2024",
-    "hours": {
-      "diurna": 3,
-      "nocturna": 4,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    },
-    "id_registro": 9,
-    "valorHoraExtra": {
-      "diurna": 16071.42857142857,
-      "nocturna": 64285.71428571428,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    },
-    "totalValorHoraExtra": "0[object Object][object Object][object Object][object Object]",
-    "cantidadHorasExtra": 7
-  },
-  {
-    "id_empleado": 3,
-    "fecha": "23/07/2024",
-    "hours": {
-      "diurna": 3,
-      "nocturna": 4,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    },
-    "id_registro": 10,
-    "valorHoraExtra": {
-      "diurna": 16071.42857142857,
-      "nocturna": 64285.71428571428,
-      "diurnaFestiva": 0,
-      "nocturnaFestiva": 0
-    },
-    "totalValorHoraExtra": 80357.14285714286,
-    "cantidadHorasExtra": 7
+    "totalValorHoraExtra": 197282.60869565216,
+    "cantidadHorasExtra": 11
   }
 ]

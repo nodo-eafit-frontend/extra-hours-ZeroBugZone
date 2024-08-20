@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import  {DataGrid}  from "@mui/x-data-grid";
 
-export default function DataTable() {
+export default function EmpleadosDataTable() {
   const [error, setError] = useState("");
   const [empleados, setEmpleados] = useState([]);
   const [horasExtra, setHorasExtra] = useState([]);

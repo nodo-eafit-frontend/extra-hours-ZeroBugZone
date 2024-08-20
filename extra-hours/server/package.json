@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"serve": "node --watch index"
+		"serve": "node index"
 	},
 	"author": "ZeroBugZone",
 	"license": "ISC",

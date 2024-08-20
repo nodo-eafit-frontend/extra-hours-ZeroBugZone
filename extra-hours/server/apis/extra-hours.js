@@ -1,14 +1,18 @@
 require('dotenv').config();
-const calculoHoras = require('../utils/calculo-horas');
+const calcularHorasExtras = require('../utils/calculo-horas');
 const { readJsonFile } = require('../utils/json-reader');
 const fs = require('fs').promises;
 
 const getExtraHours = async (req, res) => {
   try {
     const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
-    const { id } = req.params;
-    const result = reportData.filter(eh => eh.id_empleado === parseInt(id));
-    res.status(200).json(result);
+    const { empleadoId } = req.params;
+    const result = reportData.filter(eh => eh.empleadoId === parseInt(empleadoId));
+    if (result && result[0]) {
+      res.status(200).json(result[0]);
+    } else {
+      res.status(200).json({})
+    }
   } catch (error) {
     res.status(400).json({ message: 'Error al obtener las horas extra', error: error.message });
   }
@@ -23,46 +27,31 @@ const getAllExtraHour = async (req, res) => {
   }
 };
 
-const createExtraHour = async (req, res) => {
+const createOrUpdateExtraHour = async (req, res) => {
   try {
+    const config = await readJsonFile(process.env.JSON_Horas_Extras_Config);
+    const empleados = await readJsonFile(process.env.JSON_Empleados_INFO);
     const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
-    const newExtraHour = req.body;
-   const config = await readJsonFile(process.env.JSON_Horas_Extras_Config);
-   const empleados = await readJsonFile(process.env.JSON_Empleados_INFO);
-    newExtraHour.id_registro = reportData.length + 1;
-
-    const empleado = empleados.find(e => e.id === newExtraHour.id_empleado);
-    const salario = empleado.salario;
-
-    const calculoHorasExtra = calculoHoras( newExtraHour.hours, salario, config);
     
+    const horasExtrasEmpleado = req.body;
+    
+    const empleado = empleados.find(e => e.id === horasExtrasEmpleado.empleadoId);
+    const salario = empleado.salario;
+    calcularHorasExtras(horasExtrasEmpleado, salario, config);
 
-
-    const dataResult = { ...newExtraHour, ...calculoHorasExtra }
-    reportData.push(dataResult);
-
+    
+    const index = reportData.findIndex(eh => eh.empleadoId === parseInt(horasExtrasEmpleado.empleadoId));
+    if (index !== -1) {
+      reportData[index] = { ...reportData[index], ...horasExtrasEmpleado };
+    }else {
+      reportData.push(horasExtrasEmpleado);
+    }
     await fs.writeFile(process.env.JSON_Horas_Extras_INFO, JSON.stringify(reportData, null, 2));
-    res.status(201).json(dataResult);
+    res.status(201).json(horasExtrasEmpleado);
+
   } catch (error) {
     console.log(error);
     res.status(400).json({ message: 'Error al crear hora extra', error: error.message });
-  }
-};
-
-const updateExtraHour = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
-    const index = reportData.findIndex(eh => eh.id === parseInt(id));
-    if (index !== -1) {
-      reportData[index] = { ...reportData[index], ...req.body };
-      await fs.writeFile(process.env.JSON_Horas_Extras_INFO, JSON.stringify(reportData, null, 2));
-      res.status(200).json(reportData[index]);
-    } else {
-      res.status(404).json({ message: 'Hora extra no encontrada' });
-    }
-  } catch (error) {
-    res.status(400).json({ message: 'Error al actualizar hora extra', error: error.message });
   }
 };
 
@@ -86,7 +75,6 @@ const deleteExtraHour = async (req, res) => {
 module.exports = {
   getExtraHours,
   getAllExtraHour,
-  createExtraHour,
-  updateExtraHour,
+  createOrUpdateExtraHour,
   deleteExtraHour,
 };

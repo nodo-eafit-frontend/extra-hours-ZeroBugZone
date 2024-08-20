@@ -1,16 +1,26 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import BasicButtons from "./components/Botones/Boton";
-import CustomButton from "./components/Botones/BotonEncabezado";
-import { InputNumber } from "antd";
 import Brand from "./components/Brand";
-import EmpleadoBuscador from "./components/EmpleadoBuscador";
-import Observaciones from "./components/Botones/BotonObservaciones";
-import Table from "./components/Table";
-import CheckboxComponent from "./components/TipoHoraExtra";
-import CustomDateInput from "./components/AgregarFecha";
+import EmpleadosDataTable from "./components/EmpleadosDataTable";
+import TipoHoraExtraComponent from "./components/TipoHoraExtra";
+import ExtraHoursForm from "./components/ExtraHoursForm"
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
-function App() {
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
+export default function App() {
   const [count, setCount] = useState(0);
   const [id, setId] = useState(1);
   const [horasExtras, setHoras] = useState(0);
@@ -26,54 +36,33 @@ function App() {
       });
   }, [id]);
 
+  const empleadoId = 1; // Puedes cambiar este ID para probar con diferentes empleados
+
   return (
-    <>
-      <div>
-        {" "}
-        <Brand />{" "}
-      </div>
-      <div>
-        <EmpleadoBuscador />
-      </div>
-      <InputNumber min={1} max={10} defaultValue={3} onChange={onChange} />;
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        {horasExtras
-          ? "las Horas extras son" + horasExtras
-          : "No hay horas extras"}
-      </p>
-      <BasicButtons />
-      <div style={{ marginTop: "55px" }}>
-        <CustomButton text="AGREGAR NUEVA HORA EXTRA" />
-      </div>
-      <div style={{ marginTop: "50px" }}>
-        <h1>Hola</h1>
-      </div>
-      <div style={{ marginTop: "50px" }}>
-        <h4>Fecha</h4>
-        <CustomDateInput />
-      </div>
-      <div>
-        <h1>Observaciones</h1>
-        <Observaciones />
-      </div>
-      <div>
-        <h1>Empleados</h1>
-        <Table />
-      </div>
-      <div>
-        <h1></h1>
-        <CheckboxComponent />
-      </div>
-    </>
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Item>
+            <Brand />
+          </Item>
+        </Grid>
+        <Grid item xs={6}>
+          <Item>
+            <TipoHoraExtraComponent />
+          </Item>
+        </Grid>
+        
+        <Grid item xs={12}>
+          <Item>
+            <EmpleadosDataTable />
+          </Item>
+        </Grid>
+      </Grid>
+
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <ExtraHoursForm empleadoId={empleadoId} />
+      </LocalizationProvider>
+    </Box>
   );
 }
 
-export default App;
