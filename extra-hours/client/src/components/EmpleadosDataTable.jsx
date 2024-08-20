@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
-import  {DataGrid}  from "@mui/x-data-grid";
+import React, { useEffect, useState } from "react";
+import { DataGrid } from "@mui/x-data-grid";
+import { Button, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
+import ExtraHoursForm from './ExtraHoursForm'; // Asegúrate de importar el componente
 
 export default function EmpleadosDataTable() {
   const [error, setError] = useState("");
   const [empleados, setEmpleados] = useState([]);
   const [horasExtra, setHorasExtra] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedEmpleadoId, setSelectedEmpleadoId] = useState(null);
 
   useEffect(() => {
     const fetchEmpleados = async () => {
@@ -39,6 +43,16 @@ export default function EmpleadosDataTable() {
     fetchHorasExtra();
   }, []);
 
+  const handleOpenModal = (id) => {
+    setSelectedEmpleadoId(id);
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setSelectedEmpleadoId(null);
+  };
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -61,37 +75,55 @@ export default function EmpleadosDataTable() {
       },
     },
     {
-      field: "horasExtras",
-      headerName: "Horas Extras",
+      field: "cantHorasExtras",
+      headerName: "Cantidad Horas Extras",
       type: "number",
       width: 110,
       valueGetter: (value, field) => {
         const horasExtraEmpleado = horasExtra.find(
-          (h) => h.id_empleado === field.id
+          (h) => h.empleadoId === field.id
         );
-        return horasExtraEmpleado ? horasExtraEmpleado.horasExtras : 0;
+        return horasExtraEmpleado ? horasExtraEmpleado.cantidadHorasExtra : 0;
       },
     },
     {
-      field: "fechaHorasExtras",
-      headerName: "Fecha Horas Extras",
-      width: 150,
-      type: "date",
+      field: "valorHorasExtras",
+      headerName: "Valor Horas Extras",
+      type: "number",
+      width: 110,
       valueGetter: (value, field) => {
         const horasExtraEmpleado = horasExtra.find(
-          (h) => h.id_empleado === field.id
+          (h) => h.empleadoId === field.id
         );
-        return horasExtraEmpleado?.fecha ? Date.parse(horasExtraEmpleado?.fecha) : new Date();
+        return horasExtraEmpleado ? horasExtraEmpleado.totalValorHoraExtra : 0;
       },
-      valueFormatter: (value) => {
-        if (!value) return "";
-        return new Intl.DateTimeFormat("es-CO", {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        }).format(value);
+    },
+    {
+      field: "totalNomina",
+      headerName: "Total Nómina",
+      type: "number",
+      width: 110,
+      valueGetter: (value, field) => {
+        const horasExtraEmpleado = horasExtra.find(
+          (h) => h.empleadoId === field.id
+        );
+        const totalValorHoraExtra = horasExtraEmpleado ? horasExtraEmpleado.totalValorHoraExtra : 0;
+        return field.salario + totalValorHoraExtra;
       },
+    },
+    {
+      field: "acciones",
+      headerName: "Acciones",
+      width: 200,
+      renderCell: (params) => (
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => handleOpenModal(params.id)}
+        >
+          Ver Horas Extras
+        </Button>
+      ),
     },
   ];
 
@@ -110,6 +142,18 @@ export default function EmpleadosDataTable() {
           checkboxSelection
         />
       )}
+
+      <Dialog open={openModal} onClose={handleCloseModal} fullWidth maxWidth="md">
+        <DialogTitle>Horas Extras del Empleado</DialogTitle>
+        <DialogContent>
+          {selectedEmpleadoId && <ExtraHoursForm empleadoId={selectedEmpleadoId} />}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseModal} color="primary">
+            Cerrar
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

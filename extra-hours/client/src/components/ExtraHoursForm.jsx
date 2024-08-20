@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, TextField, Button, MenuItem, Table, TableHead, TableRow, TableCell, TableBody, Snackbar, Alert } from '@mui/material';
+import { Grid, TextField, Button, MenuItem, Snackbar, Alert, IconButton } from '@mui/material';
+import { DataGrid } from "@mui/x-data-grid";
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const ExtraHoursForm = ({ empleadoId }) => {
   const [empleado, setEmpleado] = useState(null);
@@ -10,11 +15,11 @@ const ExtraHoursForm = ({ empleadoId }) => {
   const [cantidadHoras, setCantidadHoras] = useState('');
   const [observaciones, setObservaciones] = useState('');
   const [horasExtras, setHorasExtras] = useState([]);
+  const [editIndex, setEditIndex] = useState(null); // Para manejar el estado de edición
 
-  // Estado para manejar los mensajes de Snackbar
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
-  const [snackbarSeverity, setSnackbarSeverity] = useState('success'); // 'success' o 'error'
+  const [snackbarSeverity, setSnackbarSeverity] = useState('success');
 
   useEffect(() => {
     const fetchEmpleadoInfo = async () => {
@@ -31,7 +36,6 @@ const ExtraHoursForm = ({ empleadoId }) => {
       try {
         const response = await fetch(`http://localhost:4000/extra-hours/${empleadoId}`);
         const data = await response.json();
-        // Asegurarnos de que la respuesta contiene las horas extras
         setHorasExtras(data.horasExtras || []);
       } catch (error) {
         console.error('Error al obtener las horas extras:', error);
@@ -44,17 +48,40 @@ const ExtraHoursForm = ({ empleadoId }) => {
 
   const agregarHoraExtra = () => {
     if (tipoHora && cantidadHoras && cantidadHoras <= 12) {
-      setHorasExtras([...horasExtras, { fecha, tipoHora, cantidadHoras, observaciones }]);
+      if (editIndex !== null) {
+        // Editar la entrada existente
+        const nuevasHorasExtras = [...horasExtras];
+        nuevasHorasExtras[editIndex] = { fecha, tipoHora, cantidadHoras, observaciones };
+        setHorasExtras(nuevasHorasExtras);
+        setEditIndex(null);
+      } else {
+        // Agregar nueva entrada
+        setHorasExtras([...horasExtras, { fecha, tipoHora, cantidadHoras, observaciones }]);
+      }
+      // Resetear campos
       setFecha(dayjs());
       setTipoHora('');
       setCantidadHoras('');
       setObservaciones('');
     } else {
-      // Mostrar un mensaje de error
       setSnackbarMessage('Por favor, verifica que todos los campos estén completos y la cantidad de horas no supere las 12.');
       setSnackbarSeverity('error');
       setSnackbarOpen(true);
     }
+  };
+
+  const editarHoraExtra = (index) => {
+    const hora = horasExtras[index];
+    setFecha(dayjs(hora.fecha));
+    setTipoHora(hora.tipoHora);
+    setCantidadHoras(hora.cantidadHoras);
+    setObservaciones(hora.observaciones);
+    setEditIndex(index);
+  };
+
+  const eliminarHoraExtra = (index) => {
+    const nuevasHorasExtras = horasExtras.filter((_, i) => i !== index);
+    setHorasExtras(nuevasHorasExtras);
   };
 
   const guardarHorasExtras = async () => {
@@ -65,7 +92,6 @@ const ExtraHoursForm = ({ empleadoId }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          empleadoId,
           horasExtras: horasExtras.map((hora) => ({
             fecha: dayjs(hora.fecha).format('YYYY-MM-DD'),
             tipoHora: hora.tipoHora,
@@ -79,16 +105,12 @@ const ExtraHoursForm = ({ empleadoId }) => {
         throw new Error('Error al guardar las horas extras');
       }
 
-      // Mostrar un mensaje de éxito
       setSnackbarMessage('Horas extras guardadas con éxito');
       setSnackbarSeverity('success');
       setSnackbarOpen(true);
-
-      // Limpiar los datos después de guardar
       setHorasExtras([]);
     } catch (error) {
       console.error('Error al guardar las horas extras:', error);
-      // Mostrar un mensaje de error
       setSnackbarMessage('Hubo un error al guardar las horas extras.');
       setSnackbarSeverity('error');
       setSnackbarOpen(true);
@@ -104,9 +126,7 @@ const ExtraHoursForm = ({ empleadoId }) => {
   }
 
   return (
-    <div>
-      <h2>Registro de Horas Extras</h2>
-
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <TextField label="Nombre" value={empleado.nombre} fullWidth InputProps={{ readOnly: true }} />
@@ -168,29 +188,43 @@ const ExtraHoursForm = ({ empleadoId }) => {
       </Grid>
 
       <Button variant="contained" color="primary" onClick={agregarHoraExtra} style={{ marginTop: '20px' }}>
-        Agregar Hora Extra
+        {editIndex !== null ? 'Actualizar Hora Extra' : 'Agregar Hora Extra'}
       </Button>
 
-      <Table style={{ marginTop: '20px' }}>
-        <TableHead>
-          <TableRow>
-            <TableCell>Fecha</TableCell>
-            <TableCell>Tipo de Hora</TableCell>
-            <TableCell>Cantidad</TableCell>
-            <TableCell>Observaciones</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {horasExtras.map((hora, index) => (
-            <TableRow key={index}>
-              <TableCell>{dayjs(hora.fecha).format('DD/MM/YYYY')}</TableCell>
-              <TableCell>{hora.tipoHora}</TableCell>
-              <TableCell>{hora.cantidadHoras}</TableCell>
-              <TableCell>{hora.observaciones}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      <div style={{ height: 400, width: '100%', marginTop: '20px' }}>
+        <DataGrid
+          rows={horasExtras.map((hora, index) => ({
+            id: index,
+            fecha: dayjs(hora.fecha).format('DD/MM/YYYY'),
+            tipoHora: hora.tipoHora,
+            cantidadHoras: hora.cantidadHoras,
+            observaciones: hora.observaciones,
+          }))}
+          columns={[
+            { field: 'fecha', headerName: 'Fecha', width: 150 },
+            { field: 'tipoHora', headerName: 'Tipo de Hora', width: 150 },
+            { field: 'cantidadHoras', headerName: 'Cantidad', width: 150 },
+            { field: 'observaciones', headerName: 'Observaciones', width: 300 },
+            {
+              field: 'acciones',
+              headerName: 'Acciones',
+              width: 150,
+              renderCell: (params) => (
+                <>
+                  <IconButton onClick={() => editarHoraExtra(params.row.id)}>
+                    <EditIcon />
+                  </IconButton>
+                  <IconButton onClick={() => eliminarHoraExtra(params.row.id)}>
+                    <DeleteIcon />
+                  </IconButton>
+                </>
+              ),
+            },
+          ]}
+          pageSize={5}
+          rowsPerPageOptions={[5, 10]}
+        />
+      </div>
 
       <Button
         variant="contained"
@@ -202,7 +236,6 @@ const ExtraHoursForm = ({ empleadoId }) => {
         Guardar Horas Extras
       </Button>
 
-      {/* Snackbar para mostrar los mensajes */}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={6000}
@@ -213,7 +246,7 @@ const ExtraHoursForm = ({ empleadoId }) => {
           {snackbarMessage}
         </Alert>
       </Snackbar>
-    </div>
+    </LocalizationProvider>
   );
 };
 

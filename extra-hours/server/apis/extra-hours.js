@@ -32,8 +32,9 @@ const createOrUpdateExtraHour = async (req, res) => {
     const config = await readJsonFile(process.env.JSON_Horas_Extras_Config);
     const empleados = await readJsonFile(process.env.JSON_Empleados_INFO);
     const reportData = await readJsonFile(process.env.JSON_Horas_Extras_INFO);
-    
     const horasExtrasEmpleado = req.body;
+    
+    horasExtrasEmpleado.empleadoId = parseInt(req.params.empleadoId);
     
     const empleado = empleados.find(e => e.id === horasExtrasEmpleado.empleadoId);
     const salario = empleado.salario;

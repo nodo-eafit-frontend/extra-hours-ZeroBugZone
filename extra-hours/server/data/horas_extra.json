@@ -3,21 +3,9 @@
     "empleadoId": 1,
     "horasExtras": [
       {
-        "fecha": "2024-08-19",
-        "tipoHora": "diurna",
-        "cantidadHoras": "1",
-        "observaciones": ""
-      },
-      {
         "fecha": "2024-08-15",
         "tipoHora": "diurna",
         "cantidadHoras": "3",
-        "observaciones": ""
-      },
-      {
-        "fecha": "2024-08-19",
-        "tipoHora": "nocturna",
-        "cantidadHoras": "1",
         "observaciones": ""
       },
       {
@@ -28,18 +16,74 @@
       },
       {
         "fecha": "2024-08-16",
-        "tipoHora": "diurnaFestiva",
+        "tipoHora": "nocturnaFestiva",
         "cantidadHoras": "5",
-        "observaciones": "este es un nuevo registro de hora extra diurna festiva"
+        "observaciones": "Actualizado este es un nuevo registro de hora extra diurna festiva"
+      },
+      {
+        "fecha": "2024-08-13",
+        "tipoHora": "nocturna",
+        "cantidadHoras": "3",
+        "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-19",
+        "tipoHora": "diurna",
+        "cantidadHoras": "5",
+        "observaciones": ""
       }
     ],
     "valorHoraExtra": {
-      "diurna": 23913.043478260868,
-      "nocturna": 17934.782608695652,
-      "diurnaFestiva": 119565.21739130434,
-      "nocturnaFestiva": 35869.565217391304
+      "diurna": 47826.086956521736,
+      "nocturna": 53804.34782608696,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 215217.3913043478
     },
-    "totalValorHoraExtra": 197282.60869565216,
-    "cantidadHorasExtra": 11
+    "totalValorHoraExtra": 316847.82608695654,
+    "cantidadHorasExtra": 17
+  },
+  {
+    "horasExtras": [
+      {
+        "fecha": "2024-08-19",
+        "tipoHora": "nocturna",
+        "cantidadHoras": "2",
+        "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-06",
+        "tipoHora": "diurnaFestiva",
+        "cantidadHoras": "6",
+        "observaciones": ""
+      }
+    ],
+    "empleadoId": 2,
+    "valorHoraExtra": {
+      "diurna": 0,
+      "nocturna": 29347.82608695652,
+      "diurnaFestiva": 117391.30434782608,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": 146739.1304347826,
+    "cantidadHorasExtra": 8
+  },
+  {
+    "horasExtras": [
+      {
+        "fecha": "2024-08-13",
+        "tipoHora": "diurnaFestiva",
+        "cantidadHoras": "2",
+        "observaciones": ""
+      }
+    ],
+    "empleadoId": 5,
+    "valorHoraExtra": {
+      "diurna": 0,
+      "nocturna": 0,
+      "diurnaFestiva": 43478.260869565216,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": 43478.260869565216,
+    "cantidadHorasExtra": 2
   }
 ]
