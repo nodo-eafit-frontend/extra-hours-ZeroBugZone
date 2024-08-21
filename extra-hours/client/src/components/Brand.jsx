@@ -1,5 +1,5 @@
-import settingsIcon from '@assets/icons/settings.png';
-import notificationsIcon from '@assets/icons/Notifications.png';
+import settingsIcon from '../assets/icons/settings.png';
+import notificationsIcon from '../assets/icons/Notifications.png';
 
 function Brand() {
   return (
