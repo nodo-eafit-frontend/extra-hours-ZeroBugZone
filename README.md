@@ -24,7 +24,7 @@ cd ../client
 npm run dev
 ```
 
-# Usar backend
+## Usar backend
 Para correr el backend, utiliza el siguiente comando
 ```bash
 cd ../server
