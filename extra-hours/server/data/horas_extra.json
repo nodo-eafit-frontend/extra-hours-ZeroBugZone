@@ -3,44 +3,20 @@
     "empleadoId": 1,
     "horasExtras": [
       {
-        "fecha": "2024-08-19",
+        "fecha": "2024-08-22",
         "tipoHora": "nocturnaFestiva",
-        "cantidadHoras": "2",
-        "observaciones": "Este es un campo de edicion"
-      },
-      {
-        "fecha": "2024-08-16",
-        "tipoHora": "nocturnaFestiva",
-        "cantidadHoras": "5",
-        "observaciones": "Actualizado este es un nuevo registro de hora extra diurna festiva"
-      },
-      {
-        "fecha": "2024-08-13",
-        "tipoHora": "nocturna",
-        "cantidadHoras": "3",
-        "observaciones": ""
-      },
-      {
-        "fecha": "2024-08-21",
-        "tipoHora": "diurna",
-        "cantidadHoras": "2",
-        "observaciones": ""
-      },
-      {
-        "fecha": "2024-08-21",
-        "tipoHora": "diurna",
-        "cantidadHoras": "5",
-        "observaciones": "Esta es una observación"
+        "cantidadHoras": "4",
+        "observaciones": "se trabaja en la noche"
       }
     ],
     "valorHoraExtra": {
-      "diurna": 41847.82608695652,
-      "nocturna": 53804.34782608696,
+      "diurna": 0,
+      "nocturna": 0,
       "diurnaFestiva": 0,
-      "nocturnaFestiva": 251086.95652173914
+      "nocturnaFestiva": 143478.26086956522
     },
-    "totalValorHoraExtra": 346739.13043478265,
-    "cantidadHorasExtra": 17
+    "totalValorHoraExtra": 143478.26086956522,
+    "cantidadHorasExtra": 4
   },
   {
     "horasExtras": [
