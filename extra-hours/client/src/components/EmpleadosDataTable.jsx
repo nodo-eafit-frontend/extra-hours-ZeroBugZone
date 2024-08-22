@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { Button, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
-import ExtraHoursForm from './ExtraHoursForm'; // Asegúrate de importar el componente
+import {
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from "@mui/material";
+import ExtraHoursForm from "./ExtraHoursForm"; // Asegúrate de importar el componente
 
 export default function EmpleadosDataTable() {
   const [error, setError] = useState("");
@@ -41,6 +47,13 @@ export default function EmpleadosDataTable() {
 
     fetchEmpleados();
     fetchHorasExtra();
+
+    const interval = setInterval(() => {
+      window.location.reload();
+    }, 50000); // Recarga cada 5 segundosreturn () => {
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   const handleOpenModal = (id) => {
@@ -91,6 +104,12 @@ export default function EmpleadosDataTable() {
       headerName: "Valor Horas Extras",
       type: "number",
       width: 110,
+      valueFormatter: (value) => {
+        return new Intl.NumberFormat("es-CO", {
+          style: "currency",
+          currency: "COP",
+        }).format(value);
+      },
       valueGetter: (value, field) => {
         const horasExtraEmpleado = horasExtra.find(
           (h) => h.empleadoId === field.id
@@ -103,11 +122,21 @@ export default function EmpleadosDataTable() {
       headerName: "Total Nómina",
       type: "number",
       width: 110,
+      valueFormatter: (value) => {
+        return new Intl.NumberFormat("es-CO", {
+          style: "currency",
+          currency: "COP",
+        }).format(value);
+      },
       valueGetter: (value, field) => {
         const horasExtraEmpleado = horasExtra.find(
           (h) => h.empleadoId === field.id
         );
-        const totalValorHoraExtra = horasExtraEmpleado ? horasExtraEmpleado.totalValorHoraExtra : 0;
+
+        const totalValorHoraExtra = horasExtraEmpleado
+          ? horasExtraEmpleado.totalValorHoraExtra
+          : 0;
+
         return field.salario + totalValorHoraExtra;
       },
     },
@@ -143,10 +172,17 @@ export default function EmpleadosDataTable() {
         />
       )}
 
-      <Dialog open={openModal} onClose={handleCloseModal} fullWidth maxWidth="md">
+      <Dialog
+        open={openModal}
+        onClose={handleCloseModal}
+        fullWidth
+        maxWidth="md"
+      >
         <DialogTitle>Horas Extras del Empleado</DialogTitle>
         <DialogContent>
-          {selectedEmpleadoId && <ExtraHoursForm empleadoId={selectedEmpleadoId} />}
+          {selectedEmpleadoId && (
+            <ExtraHoursForm empleadoId={selectedEmpleadoId} />
+          )}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseModal} color="primary">
