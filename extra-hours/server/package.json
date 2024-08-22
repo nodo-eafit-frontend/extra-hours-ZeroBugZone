@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"serve": "node index"
+		"serve": "node index --inspect --only functions"
 	},
 	"author": "ZeroBugZone",
 	"license": "ISC",
