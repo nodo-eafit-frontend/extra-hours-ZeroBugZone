@@ -19,15 +19,17 @@ npm install
 
 ## Usar fronted
 Para correr el fronted, utiliza el siguiente comando
+```bash
 cd ../client
 npm run dev
+```
 
 # Usar backend
 Para correr el backend, utiliza el siguiente comando
+```bash
 cd ../server
 npm run serve
-
-
+```
 
 ## Instalación
 
