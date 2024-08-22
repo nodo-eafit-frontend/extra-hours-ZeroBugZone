@@ -47,13 +47,6 @@ export default function EmpleadosDataTable() {
 
     fetchEmpleados();
     fetchHorasExtra();
-
-    const interval = setInterval(() => {
-      window.location.reload();
-    }, 50000); // Recarga cada 5 segundosreturn () => {
-    return () => {
-      clearInterval(interval);
-    };
   }, []);
 
   const handleOpenModal = (id) => {
