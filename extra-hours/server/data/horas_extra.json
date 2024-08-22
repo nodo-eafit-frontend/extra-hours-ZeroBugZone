@@ -21,20 +21,26 @@
         "observaciones": ""
       },
       {
-        "fecha": "2024-08-19",
+        "fecha": "2024-08-21",
+        "tipoHora": "diurna",
+        "cantidadHoras": "2",
+        "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-21",
         "tipoHora": "diurna",
         "cantidadHoras": "5",
-        "observaciones": ""
+        "observaciones": "Esta es una observación"
       }
     ],
     "valorHoraExtra": {
-      "diurna": 29891.304347826084,
+      "diurna": 41847.82608695652,
       "nocturna": 53804.34782608696,
       "diurnaFestiva": 0,
       "nocturnaFestiva": 251086.95652173914
     },
-    "totalValorHoraExtra": 334782.6086956522,
-    "cantidadHorasExtra": 15
+    "totalValorHoraExtra": 346739.13043478265,
+    "cantidadHorasExtra": 17
   },
   {
     "horasExtras": [
@@ -68,17 +74,23 @@
         "tipoHora": "diurnaFestiva",
         "cantidadHoras": "2",
         "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-21",
+        "tipoHora": "diurna",
+        "cantidadHoras": "2",
+        "observaciones": "Observación"
       }
     ],
     "empleadoId": 5,
     "valorHoraExtra": {
-      "diurna": 0,
+      "diurna": 10869.565217391304,
       "nocturna": 0,
       "diurnaFestiva": 43478.260869565216,
       "nocturnaFestiva": 0
     },
-    "totalValorHoraExtra": 43478.260869565216,
-    "cantidadHorasExtra": 2
+    "totalValorHoraExtra": 54347.82608695652,
+    "cantidadHorasExtra": 4
   },
   {
     "horasExtras": [
@@ -87,17 +99,23 @@
         "tipoHora": "nocturna",
         "cantidadHoras": "5",
         "observaciones": "Mejoras continuas"
+      },
+      {
+        "fecha": "2024-08-21",
+        "tipoHora": "diurna",
+        "cantidadHoras": "2",
+        "observaciones": ""
       }
     ],
     "empleadoId": 3,
     "valorHoraExtra": {
-      "diurna": 0,
+      "diurna": 16304.347826086956,
       "nocturna": 122282.60869565216,
       "diurnaFestiva": 0,
       "nocturnaFestiva": 0
     },
-    "totalValorHoraExtra": 122282.60869565216,
-    "cantidadHorasExtra": 5
+    "totalValorHoraExtra": 138586.9565217391,
+    "cantidadHorasExtra": 7
   },
   {
     "horasExtras": [
