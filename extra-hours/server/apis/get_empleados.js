@@ -1,20 +1,3 @@
-/*require('dotenv').config();
-const { readJsonFile } = require('../utils/json-reader');
-// const gameInfoJSON = require('../data/game-info.json');
-
-const EmpleadoInfo = async (request, response) => {
-	try {
-		const empleadoInfoJSON = await readJsonFile(process.env.JSON_Empleados_INFO); 
-        		response.status(200).send(empleadoInfoJSON);
-	} catch (error) {
-		response.status(400);
-	}
-};
-
-module.exports = {
-	getEmpleadoInfo,
-};
-*/
 require('dotenv').config();
 const { readJsonFile } = require('../utils/json-reader');
 
@@ -39,6 +22,20 @@ const getEmpleadoInfo = async (req, res) => {
   }
 };
 
+
+const getAllEmpleados = async (req, res) => {
+  try {
+    const empleadosData = await readJsonFile(process.env.JSON_EMPLEADOS_INFO);
+    if (empleadosData) {
+      res.status(200).json(empleadosData);
+    } else {
+      res.status(404).json({ message: 'Empleados no encontrado' });
+    }
+  } catch (error) {
+    res.status(400).json({ message: 'Error al obtener información del empleado', error: error.message });
+  }
+};
+
 module.exports = {
-  getEmpleadoInfo,
+  getEmpleadoInfo, getAllEmpleados
 };

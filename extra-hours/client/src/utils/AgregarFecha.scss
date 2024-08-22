@@ -1,0 +1,26 @@
+.custom-date-input {
+  color: #283593;
+  font-weight: bold;
+
+  .MuiInputBase-input {
+    color: #283593;
+  }
+
+  .MuiInput-underline:before {
+    border-bottom-color: #bdbdbd;
+  }
+
+  .MuiInput-underline:hover:before {
+    border-bottom-color: #bdbdbd;
+  }
+}
+
+.store-button {
+  margin-top: 10px;
+  background-color: #283593;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #1a237e;
+  }
+}
