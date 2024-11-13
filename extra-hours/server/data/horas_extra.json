@@ -81,17 +81,23 @@
         "tipoHora": "diurna",
         "cantidadHoras": "2",
         "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-22",
+        "tipoHora": "diurnaFestiva",
+        "cantidadHoras": "5",
+        "observaciones": "Se trabaja en la noche"
       }
     ],
     "empleadoId": 3,
     "valorHoraExtra": {
       "diurna": 16304.347826086956,
       "nocturna": 122282.60869565216,
-      "diurnaFestiva": 0,
+      "diurnaFestiva": 163043.47826086957,
       "nocturnaFestiva": 0
     },
-    "totalValorHoraExtra": 138586.9565217391,
-    "cantidadHorasExtra": 7
+    "totalValorHoraExtra": 301630.43478260865,
+    "cantidadHorasExtra": 12
   },
   {
     "horasExtras": [
