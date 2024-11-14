@@ -1,0 +1,121 @@
+[
+  {
+    "empleadoId": 1,
+    "horasExtras": [
+      {
+        "fecha": "2024-08-22",
+        "tipoHora": "nocturnaFestiva",
+        "cantidadHoras": "4",
+        "observaciones": "se trabaja en la noche"
+      }
+    ],
+    "valorHoraExtra": {
+      "diurna": 0,
+      "nocturna": 0,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 143478.26086956522
+    },
+    "totalValorHoraExtra": 143478.26086956522,
+    "cantidadHorasExtra": 4
+  },
+  {
+    "horasExtras": [
+      {
+        "fecha": "2024-08-19",
+        "tipoHora": "nocturna",
+        "cantidadHoras": "2",
+        "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-06",
+        "tipoHora": "diurnaFestiva",
+        "cantidadHoras": "6",
+        "observaciones": ""
+      }
+    ],
+    "empleadoId": 2,
+    "valorHoraExtra": {
+      "diurna": 0,
+      "nocturna": 29347.82608695652,
+      "diurnaFestiva": 117391.30434782608,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": 146739.1304347826,
+    "cantidadHorasExtra": 8
+  },
+  {
+    "horasExtras": [
+      {
+        "fecha": "2024-08-13",
+        "tipoHora": "diurnaFestiva",
+        "cantidadHoras": "2",
+        "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-21",
+        "tipoHora": "diurna",
+        "cantidadHoras": "2",
+        "observaciones": "Observación"
+      }
+    ],
+    "empleadoId": 5,
+    "valorHoraExtra": {
+      "diurna": 10869.565217391304,
+      "nocturna": 0,
+      "diurnaFestiva": 43478.260869565216,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": 54347.82608695652,
+    "cantidadHorasExtra": 4
+  },
+  {
+    "horasExtras": [
+      {
+        "fecha": "2024-08-19",
+        "tipoHora": "nocturna",
+        "cantidadHoras": "5",
+        "observaciones": "Mejoras continuas"
+      },
+      {
+        "fecha": "2024-08-21",
+        "tipoHora": "diurna",
+        "cantidadHoras": "2",
+        "observaciones": ""
+      },
+      {
+        "fecha": "2024-08-22",
+        "tipoHora": "diurnaFestiva",
+        "cantidadHoras": "5",
+        "observaciones": "Se trabaja en la noche"
+      }
+    ],
+    "empleadoId": 3,
+    "valorHoraExtra": {
+      "diurna": 16304.347826086956,
+      "nocturna": 122282.60869565216,
+      "diurnaFestiva": 163043.47826086957,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": 301630.43478260865,
+    "cantidadHorasExtra": 12
+  },
+  {
+    "horasExtras": [
+      {
+        "fecha": "2024-08-20",
+        "tipoHora": "diurna",
+        "cantidadHoras": "2",
+        "observaciones": "Se trabaja por fuera de hora laboral en el proyecto 3 para cumplir entrega del proyecto los sobrecostos serán llevados a cabo por parte del cliente"
+      }
+    ],
+    "empleadoId": 4,
+    "valorHoraExtra": {
+      "diurna": 13043.478260869566,
+      "nocturna": 0,
+      "diurnaFestiva": 0,
+      "nocturnaFestiva": 0
+    },
+    "totalValorHoraExtra": 13043.478260869566,
+    "cantidadHorasExtra": 2
+  }
+]
